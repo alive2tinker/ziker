@@ -27,14 +27,16 @@ import './theme/variables.css';
 /* Tailwind Sheet */
 import './assets/tailwind.css';
 
+import arabicMessages from './locales/ar.json';
+import englishMessages from './locales/en.json';
+
 const pinia = createPinia()
 const i18n = createI18n({
   // something vue-i18n options here ...
   locale: 'ar',
   messages: {
-    // set something locale messages ...
-    ar: import('@/locales/ar.json'),
-    en: import('@/locales/en.json')
+    ar: arabicMessages,
+    en: englishMessages
   },
   legacy: false
 })
