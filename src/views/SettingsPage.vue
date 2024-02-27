@@ -11,11 +11,11 @@
           <ion-buttons>
             <ion-back-button defaultHref="/" text=""></ion-back-button>
           </ion-buttons>
-          <ion-title>{{ t('Settings') }}</ion-title>
+          <ion-title class="font-almaraibold">{{ t('Settings') }}</ion-title>
         </ion-toolbar>
       </ion-header>
       <div class="my-7 max-w-5xl mx-auto px-4 rounded-md">
-        <ion-list lines="full">
+        <ion-list lines="full" class="font-almarai">
           <ion-item>
             <ion-label>{{ t('Font Size') }}</ion-label>
             <div class="flex justify-between">
@@ -46,7 +46,7 @@
             <ion-label>{{ t('About') }}</ion-label>
           </ion-item>
         </ion-list>
-        <h4 class="text-center dark:text-gray-400 my-4 font-semibold">{{ t('version 0.0.1') }}</h4>
+        <h4 class="text-center dark:text-gray-400 my-4 font-semibold font-almarai">{{ t('version 0.0.1') }}</h4>
       </div>
     </ion-content>
   </ion-page>

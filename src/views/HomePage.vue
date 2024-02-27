@@ -13,7 +13,7 @@
             </ion-buttons>
         </ion-toolbar>
       </ion-header>
-      <div :style="`font-size:${store.fontSize}px;font-weight:${store.fontWeight}`" :class="`flex h-[65vh] text-center mx-4`">
+      <div :style="`font-size:${store.fontSize}px;font-weight:${store.fontWeight}`" :class="`${store.getFontFamily()} flex h-[65vh] text-center mx-4`">
         <div class="m-auto">
             <div v-for="(step, index) in store.steps" :key="index" v-show="store.currentStep == index">
               {{ step.content }}

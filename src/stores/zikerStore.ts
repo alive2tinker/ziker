@@ -299,6 +299,18 @@ export const useZikerStore = defineStore("ziker", () => {
     toggleDarkTheme(ev.detail.checked);
   };
 
+
+  const getFontFamily = () => {
+    switch(fontWeight.value){
+      case 'light':
+        return 'font-almarailight';
+      case 'regular':
+        return 'font-almarai';
+      case 'bold':
+        return 'font-almaraibold';
+    }
+  }
+
   return {
     router,
     fontSize,
@@ -315,6 +327,7 @@ export const useZikerStore = defineStore("ziker", () => {
     syncSettings,
     toggleChange,
     themeToggle,
-    loading
+    loading,
+    getFontFamily
   };
 });

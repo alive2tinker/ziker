@@ -3,14 +3,14 @@
     <ion-header collapse="condense">
                 <ion-toolbar>
                     <ion-buttons>
-                        <ion-back-button defaultHref="/"></ion-back-button>
+                        <ion-back-button defaultHref="/" text=""></ion-back-button>
                     </ion-buttons>
-                    <ion-title>{{ t('About') }}</ion-title>
+                    <ion-title class="font-almaraibold">{{ t('About') }}</ion-title>
                 </ion-toolbar>
             </ion-header>
             <div class="flex h-[90vh] max-w-5xl mx-auto px-4">
                 <div class="m-auto">
-                    <div class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa nemo aliquam ab incidunt dolores reprehenderit et doloribus iure nobis illum totam vel quibusdam, quae quos officiis sunt velit, dicta eveniet!</div>
+                    <div class="text-center font-almarai">السلام عليكم</div>
                 </div>
             </div>
 </ion-content></ion-page>
