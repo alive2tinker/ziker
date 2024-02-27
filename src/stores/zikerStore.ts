@@ -251,14 +251,6 @@ export const useZikerStore = defineStore("ziker", () => {
     }, 3000);
   }
 
-  async function syncSettings() {
-    // sync language settings
-    locale.value = await getData("locale");
-    document.body.setAttribute("dir", locale.value === "ar" ? "rtl" : "ltr");
-    fontSize.value = await getData("fontSize") ?? 12;
-    fontWeight.value = await getData("fontWeight") ?? 'bold';
-  }
-
   async function getData(key) {
     return (await Preferences.get({ key: key })).value;
   }
@@ -274,6 +266,8 @@ export const useZikerStore = defineStore("ziker", () => {
   // Use matchMedia to check the user preference
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
 
+
+
   // Add or remove the "dark" class on the document body
   const toggleDarkTheme = (shouldAdd) => {
     document.body.classList.toggle("dark", shouldAdd);
@@ -287,7 +281,7 @@ export const useZikerStore = defineStore("ziker", () => {
 
   // Initialize the dark theme based on the initial
   // value of the prefers-color-scheme media query
-  initializeDarkTheme(prefersDark.matches);
+  // initializeDarkTheme(prefersDark.matches);
 
   // Listen for changes to the prefers-color-scheme media query
   prefersDark.addEventListener("change", (mediaQuery) =>
@@ -295,9 +289,12 @@ export const useZikerStore = defineStore("ziker", () => {
   );
 
   // Listen for the toggle check/uncheck to toggle the dark theme
-  const toggleChange = (ev) => {
+  const toggleChange = async (ev) => {
+    await Preferences.set({key:'darkMode', value: ev.detail.checked})
     toggleDarkTheme(ev.detail.checked);
   };
+
+  
 
 
   const getFontFamily = () => {
@@ -309,6 +306,17 @@ export const useZikerStore = defineStore("ziker", () => {
       case 'bold':
         return 'font-almaraibold';
     }
+  }
+
+
+  async function syncSettings() {
+    // sync language settings
+    locale.value = await getData("locale");
+    document.body.setAttribute("dir", locale.value === "ar" ? "rtl" : "ltr");
+    fontSize.value = await getData("fontSize") ?? 12;
+    fontWeight.value = await getData("fontWeight") ?? 'bold';
+    themeToggle.value = await getData('darkMode');
+    toggleChange(themeToggle.value)
   }
 
   return {
