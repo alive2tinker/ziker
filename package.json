@@ -21,6 +21,7 @@
     "@ionic/vue": "^7.0.0",
     "@ionic/vue-router": "^7.0.0",
     "autoprefixer": "^10",
+    "axios": "^1.6.7",
     "epic-spinners": "^2.0.0",
     "ionicons": "^7.0.0",
     "pinia": "^2.1.7",

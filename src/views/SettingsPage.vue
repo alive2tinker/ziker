@@ -25,7 +25,7 @@
             </div>
           </ion-item>
           <ion-item>
-            <ion-select :label="t('Font Weight')" :placeholder="t(store.fontWeight)"
+            <ion-select :okText="t('Ok')" :cancelText="t('Cancel')" :label="t('Font Weight')" :value="store.fontWeight" :placeholder="t(store.fontWeight)"
               @ionChange="store.updateFontWeight($event)">
               <ion-select-option value="light">{{ t('light') }}</ion-select-option>
               <ion-select-option value="regular">{{ t('regular') }}</ion-select-option>
@@ -33,7 +33,7 @@
             </ion-select>
           </ion-item>
           <ion-item>
-            <ion-select :label="$t('Language')" :placeholder="store.locale === 'ar' ? 'العربية' : 'English'"
+            <ion-select :okText="t('Ok')" :cancelText="t('Cancel')" :label="$t('Language')" :value="store.locale" :placeholder="store.locale === 'ar' ? 'العربية' : 'English'"
               @ionChange="store.updateLocale($event)">
               <ion-select-option value="ar">العربية</ion-select-option>
               <ion-select-option value="en">English</ion-select-option>

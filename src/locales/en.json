@@ -1,4 +1,12 @@
 {
-    "About":"نبذة",
-    "Language":"اللغة"
+    "About": "About",
+    "Language": "Language",
+    "light": "light",
+    "regular": "regular",
+    "bold": "bold",
+    "Font Size": "Font Size",
+    "Font Weight": "Font Weight",
+    "Dark Mode": "Dark Mode",
+    "Settings": "Settings",
+    "version 0.0.1": "version 0.0.1"
 }
