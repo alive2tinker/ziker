@@ -133,11 +133,18 @@ export const useZikerStore = defineStore("ziker", () => {
 
   const fetchAzkar = () => {
     loading.value = true;
-    axios.get('http://ziker-api.test/api/azkar').then((res) => {
+    axios.get(`${import.meta.env.VITE_APP_PRODUCTION_URL}/azkar`, {
+      headers: {
+        'X-App-Locale': locale.value
+      }
+    }).then((res) => {
       azkar.value = res.data;
       currentZiker.value = azkar.value[0]
       loading.value = false;
-    }).catch((e) => alert(e));
+    }).catch((e) => {
+      alert('Connection failed');
+      loading.value = false;
+    });
   }
 
   async function syncSettings() {
