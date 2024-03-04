@@ -135,6 +135,7 @@ export const useZikerStore = defineStore("ziker", () => {
     loading.value = true;
     axios.get(`${import.meta.env.VITE_APP_PRODUCTION_URL}/azkar`, {
       headers: {
+        'Accept':'Application/json',
         'X-App-Locale': locale.value
       }
     }).then((res) => {
